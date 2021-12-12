@@ -1,14 +1,23 @@
 require "tty-prompt"
 
-# Global Variable for tty-prompt
+# Global Variable assigned for tty-prompt
 $prompt = TTY::Prompt.new 
+
+# App Launch with welcoming message
+puts "Welcome to Mr.Pizza!!!"
+
+# def initialise()
+#     @Category = {}
+#     @food = {}
+#     @prie = {}
+# end
 
 def clear()
     # This method clear the terminal.
 
     if Gem.win_platform?
         system "cls"
-    else
+    else    
         system "clear"
     end 
 end
@@ -26,13 +35,33 @@ def get_name()
     return name
 end 
 
-
-# App Launch with welcoming message
-puts "Welcome to Mr.Pizza!!!"
-
 def select_store()
-    answer = $prompt.select("Welcome #{get_name}!!! Please select your nearest pizza store!", ["Carindale", "Chemside", "Southbank", "Calamvale", "Exit"])
+    # This method gets the selected store from the user. 
+    
+    answer = $prompt.select("Welcome #{get_name}!!! Please select your nearest pizza store!", ["Carindale", "Chemside", "Calamvale", "Exit"])
     return answer
+end
+
+def print_selection()
+    # This method prints the main menu of the system. 
+    
+    selection = $prompt.select("Please select option!", ["ADD ORDER", "REMOVE ORDER", "SHOW DETAILS", "EXIT"])
+    return selection
+end
+
+def add_order()
+    # This method print the food menu and gets items from user.
+
+end
+
+def remove_order()
+    # This method delete item from the menu list
+
+end
+
+def show_detail()
+    # This method returns the full ordering list 
+    
 end
 
 option = ""
@@ -42,17 +71,21 @@ while option != "Exit"
     # case statement to handle the options of the menu
     case option 
         when "Carindale"
-            puts "Carindale pizza store"
-            next
+            clear
+            puts "Welcome to your local Carindale Pizza Store!"
+            print_selection
         when "Chermside"
-            puts "Chermside store"
-        when "Southbank"
-            puts "Southbank Store"
+            clear
+            puts "Welcome to your local Chemside Pizza Store!"
+            print_selection
         when "Calamvale"
-            puts "Calamvale Store"
+            clear
+            puts "Welcome to your local Calamvale Pizza Store!"
+            print_selection
         else
             puts "See you next time.. #{name}!!"
-            next
+            break
+            
     end
     clear      
 end

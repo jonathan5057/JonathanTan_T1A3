@@ -8,7 +8,6 @@ $prompt = TTY::Prompt.new
 # App Launch with welcoming message
 puts "Welcome to Pizza Boss!!!"
 
-
 # Creat the food menu for pizza  
 FOOD_LIST = {
     "Hwaiian" => 4.0,
@@ -82,7 +81,6 @@ def print_selection()
             exit
         end
     end
-    
 end
 
 
@@ -115,12 +113,6 @@ def get_address()
     clear
     return address
 end 
-
-# def get_total()
-#     # This mehod gets the total value of the order.
-#     total = confirmed_orders.map{|order| order[1]}.sum
-#     return total
-# end
 
 def add_order()
     # This method print the food menu and gets items from user.

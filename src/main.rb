@@ -87,8 +87,20 @@ end
 
 
 def select_delivery
+    # This method prompt the menu for delivery option
+
     delivery = $prompt.select("Please select your option!", ["PICK UP", "DELIVERY"])
-    return delivery
+    
+    case delivery
+    when "PICK UP"
+        clear
+        puts "Please pick up from your local pizza store"
+        exit
+    else "DELIVERY"
+        clear 
+        puts "Your pizza is being delviery to you by peter"
+        exit
+    end
 end
 
 # def get_total()

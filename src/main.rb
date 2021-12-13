@@ -89,19 +89,32 @@ end
 def select_delivery
     # This method prompt the menu for delivery option
 
-    delivery = $prompt.select("Please select your option!", ["PICK UP", "DELIVERY"])
+    delivery = $prompt.select("Please select your order type!", ["PICK UP", "DELIVERY"])
     
     case delivery
     when "PICK UP"
         clear
-        puts "Please pick up from your local pizza store"
+        puts "Your order is being prepared and will be ready in 20min. Please pick up your order at your local store"
         exit
     else "DELIVERY"
         clear 
-        puts "Your pizza is being delviery to you by peter"
-        exit
+        puts "Your oder is being delviery to #{get_address}. Thank you for shopping with us. See you next time!"
+        exit 
     end
 end
+
+def get_address()
+    # This method gets delivery address from the user.
+
+    puts "Please enter your address! (must be in characters):"
+    address = $stdin.gets.chomp
+
+    if !(address.strip.length <= 10) || address.length == 0
+        raise "Your address is invalid!"
+    end
+    clear
+    return address
+end 
 
 # def get_total()
 #     # This mehod gets the total value of the order.

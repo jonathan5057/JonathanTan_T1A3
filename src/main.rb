@@ -51,7 +51,7 @@ def select_store()
 end
 
 def print_selection()
-    # This method prints the main menu of the system. 
+    # This method prints the main menu of the system and return the results. 
     confirmed_orders = []
         
     while true
@@ -61,26 +61,35 @@ def print_selection()
         when 'ADD ORDER'
             clear
             confirmed_orders << add_order()
+            selection
         when 'SHOW DETAILS'
             clear
             show_order(confirmed_orders)
+            selection
         when 'REMOVE ORDER'
             clear
             remove_order(confirmed_orders).each do |order|
                 puts order
                 confirmed_orders.delete_at(order)
             end
+            selection
         when "FINALIZED ORDER"
             clear        
             total = confirmed_orders.map{|order| order[1]}.sum        
             puts "Here is your total bill: $#{total}"
+            select_delivery
         else
             exit
         end
     end
-    return selection
+    
 end
 
+
+def select_delivery
+    delivery = $prompt.select("Please select your option!", ["PICK UP", "DELIVERY"])
+    return delivery
+end
 
 # def get_total()
 #     # This mehod gets the total value of the order.

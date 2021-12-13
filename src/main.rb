@@ -71,9 +71,9 @@ def print_selection()
                 confirmed_orders.delete_at(order)
             end
         when "FINALIZED ORDER"
-            clear
-            puts "Here is your total bill: "
-            puts confirmed_orders.map{|order| order[1]}.sum
+            clear        
+            total = confirmed_orders.map{|order| order[1]}.sum        
+            puts "Here is your total bill: $#{total}"
         else
             exit
         end
@@ -84,7 +84,8 @@ end
 
 # def get_total()
 #     # This mehod gets the total value of the order.
-#     order.each do |result, order| 
+#     total = confirmed_orders.map{|order| order[1]}.sum
+#     return total
 # end
 
 def add_order()

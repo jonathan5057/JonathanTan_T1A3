@@ -1,9 +1,19 @@
 # Pizza Ordering App
+This application is built on the ruby terminal to create an interactive experience for anyone to order pizza online.
+
+The user will be able to choose the location of the store that is nearest to them and the ordering experience will begin from there.
+
+Here is the link to the source control repository: ......
 
 # Software Development Plan
+### Purpose and scope 
+The purpose of this application is to provide easy access for users to order their pizza meal in a more efficient way by allowing them to order online then collect from the store when the order is ready, and the option of delivery directly to their door step is also available. Hence, this would save the users so much time without having to drive to the local store and wait for the order to be ready.
 
-## Purpose and scope 
-The app firstly requires the user to select the nearest store (selection of only 4 local pizza stores) and then a short welcoming message will be prompted by asking for the user’s name. The system will then display a list of selections to the user to interact with. Users could select from the pizza menu (Pizza, Side dish, drinks, dessert) and make changes to their cart if necessary until they finalized their order and the system will bring them to the order details along with the total bill. The system will then proceed to the payment part and ask for cash on Delivery (COD) or credit card payment. Once payment is finalized, the system proceeds to generate an invoice number. and prompt a message by asking the user to key in their delivery address. Lastly, the system would prompt a notification of the driver’s profile name and car model of the person who is delivering the orders. 
+### Target Audience
+The target audience of this application could be anyone that craves for a pizza meal and would like to have it quicker without having to quene up in line at the store.  
+
+### How to use it
+The app firstly requires the user to select the nearest store (selection of only 4 local pizza stores) and then a short welcoming message will be prompted by asking for the user’s name. The system will then display main menu for the user to interact with. Users could select from the pizza menu and make changes to their shopping cart if necessary until they finalized their order and the system will bring them to the order details along with the total bill. The system will then proceed to the payment part and ask for cash on Delivery (COD) or credit card payment. Once payment is finalized, the system proceeds to generate an invoice number. and prompt a message by asking the user to key in their delivery address. Lastly, the system would prompt a notification of the driver’s profile name and car model of the person who is delivering the orders.
 
 ## List of Feature 
 

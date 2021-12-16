@@ -3,27 +3,28 @@ This application is built on the ruby terminal to create an interactive experien
 
 The user will be able to choose the location of the store that is nearest to them and the ordering experience will begin from there.
 
-Here is the link to the source control repository: ......
+<br>
 
 # Software Development Plan
 #### Purpose and scope 
 The purpose of this application is to provide easy access for users to order their pizza meal in a more efficient way by allowing them to order online then collect from the store when the order is ready, and the option of delivery directly to their door step is also available. Hence, this would save the users so much time without having to drive to the local store and wait for the order to be ready.
 
+<br>
+
 #### Target Audience
 The target audience of this application could be anyone that craves for a pizza meal and would like to have it quicker without having to quene up in line at the store.  
 
-#### How to use it
-The 
+<br>
 
 ## List of Feature 
 
-Choose Name and location - When the user launches the system, he/she will first be prompted to enter their name followed by four selection of location for the Pizza store that is nearest to them. 
+**Choose Name and location** - When the user launches the system, he/she will first be prompted to enter their name followed by four selection of location for the Pizza store that is nearest to them. 
 
-Menu Selection - Once user had entered their name, the use will then be prompted with a list of menu with the following questions: Add Order, Remove Order, Show Details, Finalized order, Exit 
+**Menu Selection** - Once user had entered their name, the use will then be prompted with a list of menu with the following questions: Add Order, Remove Order, Show Details, Finalized order, Exit 
 
-Finalized order - After the user completes their selection of items on the menu, the system will display the total amount of items selected and the total cost for the bills.
+**Finalized order** - After the user completes their selection of items on the menu, the system will calculate and display the total cost for the selected items.
 
-Determine next move - After the payment is finalized by the user, the system will then display two options for the user to select from. The system will ask the user if they would like to pick up their order or have the order to be delivered to them. If the user selects “Deliver”, the user will be prompted to enter their address for the delivery. The address will need to be the same suburbs as the store that the user selects at the beginning. Once the address has been confirmed, the system will then print “your order is currently being prepared for delivery” snooze for 4 second followed by print “Peter is delivering your pizza in white corolla”
+**Type of order option** - After the payment is finalized by the user, the system will then display two options for the user to select from. The system will ask the user if they would like to pick up their order or have the order to be delivered to them. If the user selects “Deliver”, the user will be prompted to enter their address for the delivery. The address will need to be the same suburbs as the store that the user selects at the beginning. Once the address has been confirmed, the system will then print “your order is currently being prepared for delivery” snooze for 4 second followed by print “Peter is delivering your pizza in white corolla”
 
 ## User interaction and experience
 The application first prints the welcoming message and asks the user to enter their name followed by requiring the user to select the nearest pizza store (selection of only 4 local pizza stores). The system will then display a list of selection menus with ADD ORDER, REMOVE ORDER, SHOW DETAIL, FINALIZED ORDER, EXIT to the user. Users could select from the pizza menu by selecting ADD ORDER and REMOVE ORDER to their cart if necessary until they FINALIZED ORDER with the total amount displayed to the user. The user could always go back to SHOW DETAIL to view their cart along with the pricing with each pizza choice. Once FINALIZED ORDER. The system will then proceed to the order type by asking the option of PICK UP or DELIVERY. If the user selects PICK UP, the system will end the program and print the message asking the user to pick up their order from their chosen pizza local store. Else if they select DELIVERY, the program would display a message of the driver’s profile name and car model of the person who is delivering the orders and end the program.
@@ -37,6 +38,30 @@ The diagram below describes the control flow of this terminal application.
 The following table summarizes the checklist item for each feature that is required in this project for the development. The Trello app is being used in this project to track the progress of the development. More in depth information for each tasks can be viewed in this link - 
 
 Note: The images below are screenshots of the progress from the Trello app. 
+
+<br>
+
+| Feature             | Task                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Input First Name    | Create method of get_name in prompting users to input their first name.                                       |
+|                     | Capitalized the name input by user.                                                                           |
+|                     | Only accept characters as input, else raise errors                                                            |
+|                     | Limiting the characters input by 10.                                                                          |
+| Store Selection     | Create method of select_store and prints the 3 options for the user to choose.                                |
+|                     | Utilize TTY prompt for the selection menu.                                                                    |
+|                     | Create a loop in order to loop through the store and print the welcoming message                              |
+| Main Menu           | Create method of print_selection for the main menu                                                            |
+|                     | Utilize tty prompt to create menu option of (ADD ORDER, REMOVE ORDER, SHOW DETAIL, FINALIZED ORDER & EXIT).   |
+|                     | Create a loop in order to loop through the menu and return the result.                                        |
+|                     | Create method of add_order                                                                                    |
+|                     | Create method of remove_order                                                                                 |
+|                     | Create method of show_detail                                                                                  |
+|                     | Create method of finalized order                                                                              |
+| Order Option        | Create selection menu of PICK UP or Delivery with TTY Prompt.                                                 |
+|                     | Create method of gets_time for printing the time after the next 15 minutes                                    |
+|                     | Create method of clear() for clearing the system before prompting new results.                                |
+
+
 
 
 ## Help Documentation

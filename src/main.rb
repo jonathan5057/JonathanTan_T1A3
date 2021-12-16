@@ -1,7 +1,6 @@
 require "tty-prompt"
 require "tty-table"
-# require "local_time"
-
+# require "colorize"
 
 # Global Variable assigned for tty-prompt
 $prompt = TTY::Prompt.new 
@@ -9,7 +8,7 @@ $prompt = TTY::Prompt.new
 # App Launch with welcoming message
 puts "Welcome to Pizza Boss!!!"
 
-# Creat the food menu for pizza  
+# Create hashes of food menu for pizza  
 FOOD_LIST = {
     "Hwaiian" => 4.0,
     "BBQ Cheeseburger" => 3.0,
@@ -31,10 +30,10 @@ def clear()
 end
 
 def get_name()
-    # This method gets name from the user.
+    # This method gets name from the user and convert into capitalize
 
     puts "Please enter only your first name (must be less than 11 characters, no numeric and special characters):"
-    name = $stdin.gets.chomp.strip
+    name = $stdin.gets.chomp.capitalize.strip 
  
     if name.length > 10 || name.length == 0 || name.match(/[^A-Za-z]/)
         raise "Your name is invalid! Please run the program again."
@@ -84,7 +83,6 @@ def print_selection()
     end
 end
 
-
 def select_delivery
     # This method prompt the menu for delivery option
 
@@ -119,9 +117,8 @@ def gets_time()
     # Prints actual time for the next 15 minutes
 
     t = Time.now + 900 # set time to next 15 minutes (900 seconds)
-    hour = t.strftime('%H')
-    min = t.strftime('%m')
-    return "#{hour}:#{min}"
+    time = t.strftime('%H:%M')
+    return time
 end
 
 def add_order()
@@ -141,7 +138,7 @@ def remove_order(orders)
 
         result
     end
-    $prompt.multi_select("Select order to remove?", choices)
+    $prompt.multi_select("Select order to remove? (Space Bar to select and ENTER once confirm: ", choices)
 end
 
 def show_order(orders)

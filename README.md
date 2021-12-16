@@ -6,12 +6,10 @@ The user will be able to choose the location of the store that is nearest to the
 <br>
 
 # Software Development Plan
-#### Purpose and scope 
+### Purpose and scope 
 The purpose of this application is to provide easy access for users to order their pizza meal in a more efficient way by allowing them to order online then collect from the store when the order is ready, and the option of delivery directly to their door step is also available. Hence, this would save the users so much time without having to drive to the local store and wait for the order to be ready.
 
-<br>
-
-#### Target Audience
+### Target Audience
 The target audience of this application could be anyone that craves for a pizza meal and would like to have it quicker without having to quene up in line at the store.  
 
 <br>

@@ -6,13 +6,13 @@ The user will be able to choose the location of the store that is nearest to the
 Here is the link to the source control repository: ......
 
 # Software Development Plan
-### Purpose and scope 
+#### Purpose and scope 
 The purpose of this application is to provide easy access for users to order their pizza meal in a more efficient way by allowing them to order online then collect from the store when the order is ready, and the option of delivery directly to their door step is also available. Hence, this would save the users so much time without having to drive to the local store and wait for the order to be ready.
 
-### Target Audience
+#### Target Audience
 The target audience of this application could be anyone that craves for a pizza meal and would like to have it quicker without having to quene up in line at the store.  
 
-### How to use it
+#### How to use it
 The 
 
 ## List of Feature 
@@ -49,7 +49,9 @@ STEP 3: Clone the following repository to your system and change directory to yo
 
 STEP 4: Install Ruby Gem blunder and gem dependevies
 
-STEP 5: Run the following commands - ruby main.rb
+STEP 5: Change directory to src cd src
+
+STEP 6: Run the following commands - ruby main.rb
 
 ## Unit Test
 Ruby Gem of RSpec is being used 

@@ -34,7 +34,7 @@ The application first prints the welcoming message and asks the user to enter th
 ## Control Flow Diagram
 The diagram below describes the control flow of this terminal application.
 
-![Control flow diagram](../docs/Control_Flow_Diagram.png)
+![Control flow diagram](./docs/Control_Flow_diagram.png)
 
 <br>
 

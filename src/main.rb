@@ -33,12 +33,11 @@ end
 def get_name()
     # This method gets name from the user.
 
-    puts "Please enter your name (must be in characters):"
+    puts "Please enter only your first name (must be less than 11 characters, no numeric and special characters):"
     name = $stdin.gets.chomp.strip
-
-    
+ 
     if name.length > 10 || name.length == 0 || name.match(/[^A-Za-z]/)
-        raise "Your name is invalid!"
+        raise "Your name is invalid! Please run the program again."
     end
     clear
     return name
@@ -94,7 +93,7 @@ def select_delivery
     case delivery
     when "PICK UP"
         clear
-        puts "Your order will be ready in 15min. Please pick up your order at your local store"
+        puts "Your order will be ready at #{gets_time}. Please pick up your order at your local store"
         exit
     else "DELIVERY"
         clear 
@@ -116,14 +115,25 @@ def get_address()
     return address
 end 
 
+def gets_time()
+    # Prints actual time for the next 15 minutes
+
+    t = Time.now + 900 # set time to next 15 minutes (900 seconds)
+    hour = t.strftime('%H')
+    min = t.strftime('%m')
+    return "#{hour}:#{min}"
+end
+
 def add_order()
     # This method print the food menu and gets items from user.
+
     selected_food = $prompt.select("Please select option!", FOOD_LIST.keys)
     [selected_food, FOOD_LIST[selected_food]]
 end
 
 def remove_order(orders)
     # This method delete item from the menu list
+
     count = 0
     choices = orders.reduce({}) do |result, order|
         result["#{order}-#{count}"] = count
@@ -136,6 +146,7 @@ end
 
 def show_order(orders)
     # This method returns the full ordering list 
+
     table = TTY::Table.new(["food","price"], orders)
     puts table.render(:ascii)
 end
@@ -150,7 +161,7 @@ while option != "Exit"
             clear
             puts "Welcome to your local Carindale Pizza Store!"
             print_selection
-        when "Chermside"
+        when "Chemside"
             clear
             puts "Welcome to your local Chemside Pizza Store!"
             print_selection

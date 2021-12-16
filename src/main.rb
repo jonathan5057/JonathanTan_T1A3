@@ -33,9 +33,10 @@ def get_name()
     # This method gets name from the user.
 
     puts "Please enter your name (must be in characters):"
-    name = $stdin.gets.chomp
+    name = $stdin.gets.chomp.strip
 
-    if !(name.strip.length <= 10) || name.length == 0
+    
+    if name.length > 10 || name.length == 0 || name.match(/[^A-Za-z]/)
         raise "Your name is invalid!"
     end
     clear
@@ -92,7 +93,7 @@ def select_delivery
     case delivery
     when "PICK UP"
         clear
-        puts "Your order is being prepared and will be ready in 20min. Please pick up your order at your local store"
+        puts "Your order will be ready in 15min. Please pick up your order at your local store"
         exit
     else "DELIVERY"
         clear 

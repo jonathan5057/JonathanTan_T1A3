@@ -69,7 +69,7 @@ def print_selection()
         when "FINALIZED ORDER"
             clear        
             total = confirmed_orders.map{|order| order[1]}.sum        
-            puts "Here is your total bill: $#{total}"
+            puts "Here is your total bill: $#{total}".red
             select_delivery
         else
             exit
@@ -85,11 +85,17 @@ def select_delivery
     case delivery
     when "PICK UP"
         clear
-        puts "Your order will be ready at #{gets_time}. Please pick up your order at your local store"
+        puts "Your order will be ready in next 15 minutes at #{gets_time}.".green
+        puts "Please pick at your local store".yellow
+        b = Artii::Base.new :font => 'slant'
+        puts b.asciify('THANK YOU!')
         exit
     else "DELIVERY"
         clear 
-        puts "Your oder is being delviery to #{get_address}. Thank you for shopping with us. See you next time!"
+        puts "Your order is being prepared and will be deliver to #{get_address}."
+        puts "Thank you for shopping with us. See you next time!"
+        b = Artii::Base.new :font => 'slant'
+        puts b.asciify('THANK YOU!')
         exit 
     end
 end
@@ -97,28 +103,31 @@ end
 def get_address()
     # This method gets delivery address from the user.
 
-    puts "Please enter your address! (must be in characters):"
-    address = $stdin.gets.chomp
-
-    if !(address.strip.length <= 10) || address.length == 0
-        raise "Your address is invalid!"
-    end
+    puts "Please enter your address!".green
+    print "Enter Your Street Number: ".yellow
+    number = gets.chomp
+    print "Enter Your Street Name: ".yellow
+    street = gets.chomp.capitalize
+    print "Enter Your Surburt Name: ".yellow
+    suburt = gets.chomp.capitalize
+    print "Enter Your Postcode: ".yellow
+    postcode = gets.chomp
     clear
-    return address
+    return "#{number} #{street} #{suburt} QLD #{postcode}"
 end 
 
 def gets_time()
     # Prints actual time for the next 15 minutes
 
     t = Time.now + 900 # set time to next 15 minutes (900 seconds)
-    time = t.strftime('%H:%M')
+    time = t.strftime('%I:%M%p')
     return time
 end
 
 def add_order()
     # This method print the food menu and gets items from user.
 
-    selected_food = $prompt.select("Please select option!", FOOD_LIST.keys)
+    selected_food = $prompt.select("Please select option!".yellow, FOOD_LIST.keys)
     [selected_food, FOOD_LIST[selected_food]]
 end
 

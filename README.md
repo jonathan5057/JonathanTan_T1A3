@@ -41,7 +41,7 @@ The diagram below describes the control flow of this terminal application.
 ## Implementation Plan
 The following table summarizes the checklist item for each feature that is required in this project for the development. The Trello app is being used in this project to track the progress of the development. More in depth information for each tasks can be viewed in this link - 
 
-Note: The images below are screenshots of the progress from the Trello app. 
+Note: The images below are screenshots of the progress from the Trello app. [Link to my trello](https://trello.com/invite/b/sQgYue4C/c07be3b9f6c85e8646639e15e377ba82/jonathantant1a3) 
 
 <br>
 

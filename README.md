@@ -71,17 +71,36 @@ Note: The images below are screenshots of the progress from the Trello app.
 ## Help Documentation
 Please follow the instructions below to install and run the application.
 
-STEP 1: Install Ruby on your system.
+STEP 1: Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your system.
 
-STEP 2: Install Git on your system.
+STEP 2: Install [Git](https://git-scm.com/downloads) on your system.
 
 STEP 3: Clone the following repository to your system and change directory to your project folder.
 
-STEP 4: Install Ruby Gem blunder and gem dependevies
+```bash
+git clone git@github.com:jonathan5057/JonathanTan_T1A3.git
+cd JonathanTan_T1A3
+```
 
-STEP 5: Change directory to src cd src
+STEP 4: Change directory to src
 
-STEP 6: Run the following commands - ruby main.rb
+```bash
+cd JonathanTan_T1A3/src
+```
+
+STEP 5: Run the Ruby Gem blunder and gem dependencies
+
+```bash
+./run_app.sh
+```
+
+STEP 6: Run the application
+
+```bash
+ruby main.rb
+```
+
+<br>
 
 ## Unit Test
 Ruby Gem of RSpec is being used 

@@ -4,6 +4,7 @@ require "colorize"
 require "artii"
 
 require_relative "./menu.rb"
+require_relative "./user_name.rb"
 
 # Global Variable assigned for tty-prompt
 $prompt = TTY::Prompt.new 
@@ -11,7 +12,7 @@ $prompt = TTY::Prompt.new
 # App Launch with welcoming message
 a = Artii::Base.new :font => 'slant'
 puts a.asciify('Welcome To Pizza Boss!')
-puts "Welcome to Pizza Boss!!!".red
+puts "Welcome to Pizza Boss!!!".green
 
 def clear()
     # This method clear the terminal.
@@ -26,12 +27,13 @@ end
 def get_name()
     # This method gets name from the user and convert into capitalize
 
-    puts "Please enter only your first name (must be less than 11 characters, no numeric and special characters):"
+    puts "Please enter only your first name (must be less than 11 characters, no numeric and special characters):".yellow
     name = $stdin.gets.chomp.capitalize.strip 
  
-    if name.length > 10 || name.length == 0 || name.match(/[^A-Za-z]/)
+    if invalid_name(name)
         raise "Your name is invalid! Please run the program again."
     end
+
     clear
     return name
 end 
@@ -77,6 +79,14 @@ def print_selection()
     end
 end
 
+def gets_time()
+    # Prints actual time for the next 15 minutes
+
+    t = Time.now + 900 # set time to next 15 minutes (900 seconds)
+    time = t.strftime('%I:%M%p')
+    return time
+end
+
 def select_delivery
     # This method prompt the menu for delivery option
 
@@ -92,7 +102,7 @@ def select_delivery
         exit
     else "DELIVERY"
         clear 
-        puts "Your order is being prepared and will be deliver to #{get_address}."
+        puts "Your order is being prepared and will be deliver to #{get_address}.".green
         puts "Thank you for shopping with us. See you next time!"
         b = Artii::Base.new :font => 'slant'
         puts b.asciify('THANK YOU!')
@@ -114,14 +124,6 @@ def get_address()
     postcode = gets.chomp
     clear
     return "#{number} #{street} #{suburt} QLD #{postcode}"
-end 
-
-def gets_time()
-    # Prints actual time for the next 15 minutes
-
-    t = Time.now + 900 # set time to next 15 minutes (900 seconds)
-    time = t.strftime('%I:%M%p')
-    return time
 end
 
 def add_order()
@@ -159,18 +161,18 @@ while option != "Exit"
     case option 
         when "Carindale"
             clear
-            puts "Welcome to your local Carindale Pizza Store!"
+            puts "Welcome to your local Carindale Pizza Store!".yellow
             print_selection
         when "Chemside"
             clear
-            puts "Welcome to your local Chemside Pizza Store!"
+            puts "Welcome to your local Chemside Pizza Store!".yellow
             print_selection
         when "Calamvale"
             clear
-            puts "Welcome to your local Calamvale Pizza Store!"
+            puts "Welcome to your local Calamvale Pizza Store!".yellow
             print_selection
         else
-            puts "See you next time.. !!"
+            puts "See you next time.. !!".yellow
             break       
     end
     clear      

@@ -1,5 +1,4 @@
 require 'rspec'
-#require_relative '../main.rb'
 require_relative '../menu.rb'
 require_relative '../user_name.rb'
 

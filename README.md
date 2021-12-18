@@ -103,7 +103,11 @@ ruby main.rb
 <br>
 
 ## Unit Test
-Ruby Gem of RSpec is being used 
+Ruby Gem of RSpec is being used [RSpec](https://rspec.info/) for conducting the test. There are total of 6 unit tests were deployed in order to check if the application is running as expected. Please refer to the table below for the detailed summary of the tests. The souce code can be view from rspec.rb ruby file. 
 
-Table
-
+| Number | Feature                              | Test                                                            | Expectation  | Actual       | Result |
+| ------ | ------------------------------------ | --------------------------------------------------------------- | ------------ | ------------ | ------ |
+| 1      | User input name                      | should return true if length longer than 10                     | invalid name | invalid name | pass   |
+| 2      | User input name                      | should return true if blank                                     | invalid name | invalid name | pass   |
+| 3      | User input name                      | should return true if contains digit                            | invalid name | invalid name | pass   |
+| 4      | pizza Menu check                     | should return available menu                                    | match        | match        | pass   |

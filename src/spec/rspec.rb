@@ -18,21 +18,6 @@ describe "invalid name" do
     end
 end
 
-# describe "get_time_after" do
-#     it "should the time later than current time by 900 seconds (default)" do
-#         t = Time.now + 900
-#         time_diff = gets_time_after - t
-#         expect(time_diff.abs).to be_between(0,2)
-#     end
-# end
-
-# describe "format_time" do
-#     it "should return expected default format" do
-#         current_time = Time.now
-#         expect(format_time(current_time)).to eq(current_time.strftime('%I:%M%p'))
-#     end
-# end
-
 describe "menu" do
     it "should return available menu" do
         expect(FOOD_LIST).to match({

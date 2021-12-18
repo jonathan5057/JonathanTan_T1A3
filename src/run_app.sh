@@ -9,6 +9,3 @@ bundle install
 
 #clear the screen
 clear
-
-#run program
-ruby main.rb

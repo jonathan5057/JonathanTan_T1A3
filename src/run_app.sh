@@ -1,5 +1,5 @@
 #remove Gemfile.lock
-#rm Gemfile.lock
+rm Gemfile.lock
 
 #install bundle
 gem install bundle

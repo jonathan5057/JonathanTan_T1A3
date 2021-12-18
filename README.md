@@ -103,7 +103,7 @@ ruby main.rb
 <br>
 
 ## Unit Test
-Ruby Gem of RSpec is being used [RSpec](https://rspec.info/) for conducting the test. There are total of 6 unit tests were deployed in order to check if the application is running as expected. Please refer to the table below for the detailed summary of the tests. The souce code can be view from rspec.rb ruby file. 
+Ruby Gem of [RSpec](https://rspec.info/) is being used for conducting the test. There are total of 4 unit tests were deployed in order to check if the application is running as expected. Please refer to the table below for the detailed summary of the tests. The souce code can be view from rspec.rb ruby file. 
 
 | Number | Feature                              | Test                                                            | Expectation  | Actual       | Result |
 | ------ | ------------------------------------ | --------------------------------------------------------------- | ------------ | ------------ | ------ |

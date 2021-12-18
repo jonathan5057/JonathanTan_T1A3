@@ -65,8 +65,15 @@ Note: The images below are screenshots of the progress from the Trello app. [Lin
 |                     | Create method of gets_time for printing the time after the next 15 minutes                                    |
 |                     | Create method of clear() for clearing the system before prompting new results.                                |
 
+![Trello image](./docs/trello_first_image.PNG)
 
+![Trello image](./docs/trello_second_image.PNG)
 
+![Trello image](./docs/trello_third_image.PNG)
+
+![Trello image](./docs/trello_fourth_image.PNG)
+
+<br>
 
 ## Help Documentation
 Please follow the instructions below to install and run the application.

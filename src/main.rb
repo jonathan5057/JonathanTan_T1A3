@@ -1,7 +1,7 @@
 require "tty-prompt"
 require "tty-table"
-# require "colorize"
-
+require "colorize"
+require "artii"
 
 require_relative "./menu.rb"
 
@@ -9,7 +9,9 @@ require_relative "./menu.rb"
 $prompt = TTY::Prompt.new 
 
 # App Launch with welcoming message
-puts "Welcome to Pizza Boss!!!"
+a = Artii::Base.new :font => 'slant'
+puts a.asciify('Welcome To Pizza Boss!')
+puts "Welcome to Pizza Boss!!!".red
 
 def clear()
     # This method clear the terminal.
